@@ -1,5 +1,7 @@
-<h1>Your cocktails</h1>
-
 <% @cocktails.each do |cocktail| %>
-  <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+  <div class="fullpage_banner">
+    <h3><%= cocktail.name %></h3>
+    <%= link_to "See more", cocktail_path(cocktail) %>
+  </div>
+
 <% end %>
