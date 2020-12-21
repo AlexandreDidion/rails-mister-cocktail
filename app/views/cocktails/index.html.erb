@@ -1,7 +1,14 @@
 <% @cocktails.each do |cocktail| %>
   <div class="fullpage_banner">
-    <h3><%= cocktail.name %></h3>
-    <%= link_to "See more", cocktail_path(cocktail) %>
+    <section>
+      <h3><%= cocktail.name %></h3>
+      <h5> Ingredients :</h5>
+      <ul>
+        <% cocktail.ingredients.each do |ingredient| %>
+          <li><%= ingredient.name %></li>
+        <% end %>
+      </ul>
+      <%= link_to "Go to Recipe", cocktail_path(cocktail), class:"button_square" %>
+    </section>
   </div>
-
 <% end %>

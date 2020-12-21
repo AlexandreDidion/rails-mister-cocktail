@@ -13,7 +13,12 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
-    <%= yield %>
+    <header>
+      <%= render 'shared/navbar' %>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+    <%= render 'shared/footer' %>
   </body>
 </html>

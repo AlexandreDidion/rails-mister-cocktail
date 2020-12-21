@@ -1,17 +1,22 @@
-<p><%= @cocktail.name %> </p>
+<figure class="banner">
+  <h1> <%= @cocktail.name %> </h1>
+</figure>
 
-<%= link_to 'Add a new dose', new_cocktail_dose_path(@cocktail) %>
-
-<p>Doses :</p>
-
-<% @cocktail.doses.each do |dose| %>
-  <%= dose.ingredient.name %>
-  <%= dose.description %>
-  <%= link_to "Delete",
-      dose_path(dose),
-      method: :delete,
-      data: { confirm: "Are you sure?" }  %>
-<% end %>
+<div class="container d-flex justify-content-center">
+  <section class="card-list">
+    <h3>Recipe</h3>
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+        <li><%= dose.ingredient.name %> - <%= dose.description %>   (<%= link_to "Delete",
+            dose_path(dose),
+            method: :delete,
+            data: { confirm: "Are you sure you want to remove this ingredient?" }  %>)
+        </li>
+      <% end %>
+    </ul>
+    <%= link_to 'Add a new step', new_cocktail_dose_path(@cocktail), class:"button_round" %>
+  </section>
+</div>
 
 
 

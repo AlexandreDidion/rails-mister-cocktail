@@ -1,0 +1,26 @@
+.button_round {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #a32828;
+  transition: background 0.3s ease;
+}
+
+.button_round:hover {
+  background: #991111;
+  text-decoration: none;
+  color: white;
+  opacity: 0.8;
+}
+
+.button_square {
+  border : 2px solid white;
+  color: white;
+  padding: 8px 24px;
+}
+
+.button_square:hover{
+  text-decoration: none;
+  color: white;
+  opacity: 0.6;
+}
