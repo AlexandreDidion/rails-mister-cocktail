@@ -1,15 +1,15 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light">
+<nav class="navbar navbar-expand-md navbar-light bg-light d-flex justify-content-between">
   <a class="navbar-brand" href="/cocktails">
     <%= image_tag "logo.png", alt: "Icon made by Freepip from www.flaticon.com", width: 30, height: 30, class: "d-inline-block align-top", loading: "lazy" %>
     Mister Cocktail
   </a>
   <div class="d-inline-flex">
-    <a class="btn btn primary" href="/cocktails/new">Add a new cocktail</a>
+    <a href="/cocktails/new" class="btn btn-primary mr-2" >Add a new cocktail</a>
     <%= form_tag search_cocktails_path, method: :get, class:"form-inline" do %>
       <%= text_field_tag :query,
         params[:query],
-        class: "form-control",
-        placeholder: "Find a cocktail"
+        class: "form-control typed-form",
+        placeholder: ""
         %>
       <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
