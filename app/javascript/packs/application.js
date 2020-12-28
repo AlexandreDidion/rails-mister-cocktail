@@ -10,9 +10,12 @@ require("channels")
 
 import 'bootstrap';
 import { loadDynamicSearchText } from '../components/search';
+import { loadAnimationOnScroll } from '../components/aos';
+
 
 document.addEventListener('turbolinks:load', () => {
   loadDynamicSearchText();
+  loadAnimationOnScroll();
 });
 
 
