@@ -22,6 +22,15 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def search
+    if params[:query].present?
+      sql_query = 'name ILIKE :query'
+      @cocktails = Cocktail.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @cocktails = Cocktail.all
+    end
+  end
+
   private
 
   def find_cocktail
