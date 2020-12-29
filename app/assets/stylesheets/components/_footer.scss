@@ -4,6 +4,7 @@ footer {
   align-items: center;
   background:#F0F0F0;
   color: rgba(0,0,0,0.4);
+  flex-shrink: 0;
 
   .footer_links a {
     color: black;

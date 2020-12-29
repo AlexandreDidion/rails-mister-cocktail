@@ -24,8 +24,8 @@ class CocktailsController < ApplicationController
 
   def search
     if params[:query].present?
-      sql_query = 'name ILIKE :query'
-      @cocktails = Cocktail.where(sql_query, query: "%#{params[:query]}%")
+      sql_query = 'cocktails.name ILIKE :query OR ingredients.name ILIKE :query'
+      @cocktails = Cocktail.joins(:ingredients).where(sql_query, query: "%#{params[:query]}%").uniq
     else
       @cocktails = Cocktail.all
     end
