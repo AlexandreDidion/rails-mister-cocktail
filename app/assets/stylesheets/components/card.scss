@@ -19,6 +19,11 @@ margin: 1rem;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding : 2rem;
   margin: 1rem;
+
+    ul {
+    list-style : none;
+    padding: 0;
+  }
 }
 
 .card-large {

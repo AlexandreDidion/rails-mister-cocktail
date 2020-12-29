@@ -17,18 +17,6 @@
     <%= render 'shared/modal' %>
   </section>
   <section class="card-small">
-    <h3> Add a new review</h3>
-
-    <%= simple_form_for [@cocktail, @review] do |f| %>
-      <%= f.input :content %>
-      <%= f.input :rating, collection: 1..5 %>
-      <%= f.button :submit, class:"button_round" %>
-    <% end %>
-  </section>
-</div>
-
-<div class="container d-flex justify-content-center">
-  <section class="card-large">
     <h3> Reviews</h3>
     <% @cocktail.reviews.each do |review| %>
       <ul>
@@ -41,6 +29,18 @@
             data: { confirm: "Remove this review?" }  %>
         </li>
       </ul>
+    <% end %>
+  </section>
+</div>
+
+<div class="container d-flex justify-content-center">
+  <section class="card-large">
+    <h3> Add a new review</h3>
+
+    <%= simple_form_for [@cocktail, @review] do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating, collection: 1..5 %>
+      <%= f.button :submit, class:"button_round" %>
     <% end %>
   </section>
 </div>
