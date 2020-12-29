@@ -22,7 +22,7 @@
       <ul>
         <li>
         <%= review.content %>
-        <%= "*" * review.rating %>
+        <%= "<i class='fas fa-star'></i>".html_safe * review.rating %><%=  "<i class='far fa-star'></i>".html_safe * (5-review.rating)   %>
         <%= link_to "Delete",
             review_path(review),
             method: :delete,
