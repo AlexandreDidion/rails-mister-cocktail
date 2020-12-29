@@ -4,14 +4,14 @@
     Mister Cocktail
   </a>
   <div class="d-inline-flex">
-    <a href="/cocktails/new" class="btn btn-primary mr-2" >Add a new cocktail</a>
+    <a href="/cocktails/new" class="button_round mr-2" >Add a new cocktail</a>
     <%= form_tag search_cocktails_path, method: :get, class:"form-inline" do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control typed-form",
         placeholder: ""
         %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <%= submit_tag "Search", style:'padding: 4px'%>
     <% end %>
   </div>
 </nav>
