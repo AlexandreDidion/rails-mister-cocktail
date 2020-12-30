@@ -4,7 +4,7 @@
       <h3><%= cocktail.name %></h3>
       <% reviews = cocktail.reviews.map {|review| review.rating} %>
       <% average = reviews.reduce(:+) / reviews.length unless reviews.empty? %>
-      <p> Average Rating : <%= ("<i class='fas fa-star'></i>".html_safe * average) unless average.nil? %> <%= "No reviews" if average.nil? %>
+      <p> Average Rating : <%= ("<i class='fas fa-star'></i>".html_safe * average) unless average.nil? %> <%= "No reviews" if average.nil? %> </p>
       <h5> Ingredients :</h5>
       <ul>
         <% cocktail.ingredients.each do |ingredient| %>
