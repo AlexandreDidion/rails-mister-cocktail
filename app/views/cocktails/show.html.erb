@@ -11,10 +11,10 @@
         <h3>Recipe</h3>
         <ul>
           <% @cocktail.doses.each do |dose| %>
-            <li><%= dose.ingredient.name %> - <%= dose.description %>   (<%= link_to "Delete",
+            <li><%= dose.ingredient.name %> - <%= dose.description %>   <%= link_to "<i class='far fa-times-circle'></i>".html_safe,
                 dose_path(dose),
                 method: :delete,
-                data: { confirm: "Are you sure you want to remove this ingredient?" }  %>)
+                data: { confirm: "Are you sure you want to remove this ingredient?" }  %>
             </li>
           <% end %>
         </ul>
@@ -29,7 +29,7 @@
             <li>
             <%= review.content %>
             <%= "<i class='fas fa-star'></i>".html_safe * review.rating %><%=  "<i class='far fa-star'></i>".html_safe * (5-review.rating)   %>
-            <%= link_to "Delete",
+            <%= link_to "<i class='far fa-times-circle'></i>".html_safe,
                 review_path(review),
                 method: :delete,
                 data: { confirm: "Remove this review?" }  %>
