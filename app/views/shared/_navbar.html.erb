@@ -1,18 +1,25 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light d-flex justify-content-between">
+<nav class="navbar navbar-expand-md navbar-light bg-light d-flex">
   <a class="navbar-brand" href="/cocktails">
     <%= image_tag "logo.png", alt: "Icon made by Freepip from www.flaticon.com", width: 30, height: 30, class: "d-inline-block align-top", loading: "lazy" %>
     Mister Cocktail
   </a>
-  <div class="d-inline-flex">
-    <a href="/cocktails/new" class="button_round mr-2" >Add a new cocktail</a>
-    <%= form_tag search_cocktails_path, method: :get, class:"form-inline" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control typed-form",
-        placeholder: ""
-        %>
-      <%= submit_tag "Search", style:'padding: 4px'%>
-    <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <div class="d-inline-flex">
+      <a href="/cocktails/new" class="btn btn-primary mr-2" >Add a new cocktail</a>
+      <%= form_tag search_cocktails_path, method: :get, class:"form-inline" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control typed-form",
+          placeholder: ""
+          %>
+        <%= submit_tag "Search", style:'padding: 4px'%>
+      <% end %>
+    </div>
   </div>
 </nav>
 
