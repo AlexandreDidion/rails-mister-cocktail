@@ -1,49 +1,59 @@
-<figure class="banner">
-  <h1> <%= @cocktail.name %> </h1>
+<figure class="banner d-flex align-items-center justify-content-center">
+  <div>
+    <h1> <%= @cocktail.name %> </h1>
+  </div>
 </figure>
 
-<div class="container d-flex justify-content-around">
-  <section class="card-list">
-    <h3>Recipe</h3>
-    <ul>
-      <% @cocktail.doses.each do |dose| %>
-        <li><%= dose.ingredient.name %> - <%= dose.description %>   (<%= link_to "Delete",
-            dose_path(dose),
-            method: :delete,
-            data: { confirm: "Are you sure you want to remove this ingredient?" }  %>)
-        </li>
-      <% end %>
-    </ul>
-    <%= render 'shared/modal' %>
-  </section>
-  <section class="card-small">
-    <h3> Reviews</h3>
-    <% @cocktail.reviews.each do |review| %>
-      <ul>
-        <li>
-        <%= review.content %>
-        <%= "<i class='fas fa-star'></i>".html_safe * review.rating %><%=  "<i class='far fa-star'></i>".html_safe * (5-review.rating)   %>
-        <%= link_to "Delete",
-            review_path(review),
-            method: :delete,
-            data: { confirm: "Remove this review?" }  %>
-        </li>
-      </ul>
-    <% end %>
-  </section>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <section class="card">
+        <h3>Recipe</h3>
+        <ul>
+          <% @cocktail.doses.each do |dose| %>
+            <li><%= dose.ingredient.name %> - <%= dose.description %>   (<%= link_to "Delete",
+                dose_path(dose),
+                method: :delete,
+                data: { confirm: "Are you sure you want to remove this ingredient?" }  %>)
+            </li>
+          <% end %>
+        </ul>
+        <%= render 'shared/modal' %>
+      </section>
+    </div>
+    <div class="col12 col-md-6">
+      <section class="card">
+        <h3> Reviews</h3>
+        <% @cocktail.reviews.each do |review| %>
+          <ul>
+            <li>
+            <%= review.content %>
+            <%= "<i class='fas fa-star'></i>".html_safe * review.rating %><%=  "<i class='far fa-star'></i>".html_safe * (5-review.rating)   %>
+            <%= link_to "Delete",
+                review_path(review),
+                method: :delete,
+                data: { confirm: "Remove this review?" }  %>
+            </li>
+          </ul>
+        <% end %>
+      </section>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+        <section class="card">
+          <h3> Add a new review</h3>
+
+          <%= simple_form_for [@cocktail, @review] do |f| %>
+            <%= f.input :content %>
+            <%= f.input :rating, collection: 1..5 %>
+            <%= f.button :submit, class:"button_round" %>
+          <% end %>
+        </section>
+    </div>
+  </div>
 </div>
 
-<div class="container d-flex justify-content-center">
-  <section class="card-large">
-    <h3> Add a new review</h3>
-
-    <%= simple_form_for [@cocktail, @review] do |f| %>
-      <%= f.input :content %>
-      <%= f.input :rating, collection: 1..5 %>
-      <%= f.button :submit, class:"button_round" %>
-    <% end %>
-  </section>
-</div>
 
 
 

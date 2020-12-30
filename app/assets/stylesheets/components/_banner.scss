@@ -30,12 +30,11 @@
   background-size: cover;
   background-position: center;
   height: 50vh;
-  padding: 25vh;
+  text-align: center;
 
   h1 {
     color:white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    text-align: center;
   }
 }
 
@@ -48,7 +47,7 @@
 
 @media (max-width: 758px) {
   .fullpage_banner {
-    padding-right: 1rem;
+    padding-right: 1.5rem;
   }
 }
 
