@@ -28,10 +28,23 @@
   background-position: center;
   height: 50vh;
   text-align: center;
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 
   h1 {
-    color:white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    position: relative;
+  }
+
+  #update_banner {
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+    position: absolute;
+    right: 1rem;
+    bottom: 19rem;
   }
 }
 

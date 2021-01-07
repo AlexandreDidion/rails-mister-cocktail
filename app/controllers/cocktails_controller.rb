@@ -1,5 +1,5 @@
 class CocktailsController < ApplicationController
-  before_action :find_cocktail, only: [:show]
+  before_action :find_cocktail, only: %i[show edit update]
   def index
     @cocktails = Cocktail.all
   end
@@ -20,6 +20,13 @@ class CocktailsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit; end
+
+  def update
+    @cocktail.update(cocktail_strong_params)
+    redirect_to cocktail_path(@cocktail)
   end
 
   def search
