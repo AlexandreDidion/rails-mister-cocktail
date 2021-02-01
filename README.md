@@ -1,24 +1,3 @@
-# README
+Mister Cocktail, first project from A to Z for Le Wagon. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Feel free to see the result at : https://cocktalex.herokuapp.com/
